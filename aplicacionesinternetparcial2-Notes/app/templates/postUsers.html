@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Usuario</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{user.username}}<a class="btn btn-primary" href="{{url_for('publicaciones_user_index', user_id=user.id)}}">Ver publicaciones</a></td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
